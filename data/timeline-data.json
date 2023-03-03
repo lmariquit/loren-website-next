@@ -1,0 +1,42 @@
+[
+  {
+    "type": "school",
+    "school": "Rutgers University",
+    "location": "New Brunswick, NJ",
+    "degree": "Finance",
+    "graduationYear": 2014,
+    "start": 2010,
+    "end": 2014,
+    "color": "#FF2400"
+  },
+  {
+    "type": "company",
+    "company": "Jefferies Group",
+    "duration": "2014-2018",
+    "position": "Operations Associate",
+    "location": "New York, NY",
+    "start": 2014,
+    "end": 2018,
+    "color": "#3e3e3e"
+  },
+  {
+    "type": "school",
+    "school": "Fullstack Academy",
+    "location": "New York, NY",
+    "degree": "Fullstack Development",
+    "graduationYear": 2018,
+    "start": 2018,
+    "end": 2019,
+    "color": "#dd2d2d"
+  },
+  {
+    "type": "company",
+    "company": "Dotdash meredith",
+    "duration": "2019-Current",
+    "position": "Frontend Software Developer II",
+    "location": "New York, NY",
+    "start": 2019,
+    "end": 2023,
+    "color": "#ff2323"
+  }
+]

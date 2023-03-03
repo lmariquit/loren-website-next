@@ -1,0 +1,209 @@
+@use './variables' as var;
+
+.timeline-card {
+  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rem;
+  font-size: 17px;
+
+  @media (min-width: var.$bp-tablet) {
+    margin-left: 13rem;
+    font-size: 20px;
+  }
+
+  @media (min-width: var.$bp-desktop) {
+    padding: 1rem .5rem 1rem;
+    margin-top: 4rem;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  span {
+    white-space: nowrap;
+    opacity: 0;
+    transition: top .4s ease, opacity .5s ease-out;
+
+    &:first-of-type {
+      top: 50%;
+      position: absolute;
+      opacity: 1;
+      transform: translateY(-50%);
+      font-size: 25px;
+    }
+  }
+
+  &:hover span {
+    opacity: 1;
+
+    &:first-of-type {
+      top: -1rem;
+
+      @media (min-width: var.$bp-desktop) {
+        top: 0;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3.5rem;
+    left: -4rem;
+    top: 35%;
+    border-top: 1px solid black;
+
+    @media (min-width: var.$bp-tablet) {
+      width: 8rem;
+      left: -9rem;
+      top: 45%;
+    }
+  }
+
+  &:nth-of-type(2n-1)::before {
+    @media (min-width: var.$bp-desktop) {
+      width: 1rem;
+      height: calc(100% - 2rem);
+      top: -1rem;
+      left: 0;
+      border-top: none;
+      border-left: 1px solid black;
+    }
+  }
+
+  &:nth-of-type(2n)::before {
+    @media (min-width: var.$bp-desktop) {
+      width: 1rem;
+      height: calc(100% - 2rem);
+      bottom: -1rem;
+      top: auto;
+      left: 0;
+      border-top: none;
+      border-left: 1px solid black;
+    }
+  }
+
+  &::after {
+    content: "Click for More Info";
+    position: absolute;
+    top: 3.55rem;
+    font-size: 1rem;
+    color: #3f3f3fa8;
+    transition: opacity .8s ease-out .2s;
+
+    @media (min-width: var.$bp-desktop) {
+      content: "More Info";
+      top: 4.55rem;
+    }
+  }
+
+  &:hover::after {
+    opacity: 0;
+    transition: opacity .2s ease-out;
+  }
+}
+
+.timeline-wrapper {
+  height: 90rem;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+
+  div:nth-of-type(2n) {
+    top: auto;
+    bottom: 50%;
+  }
+
+  @media (min-width: var.$bp-desktop) {
+    height: calc(100vh - var(--min-nav-height) - 13rem);
+    margin: auto;
+  }
+}
+
+.timeline-left {
+  position: absolute;
+  height: 100%;
+  margin-left: 3rem;
+  border-right: 0.25rem solid black;
+  transform: translateX(-1px);
+
+  @media (min-width: var.$bp-desktop) {
+    height: 50%;
+    width: 100%;
+    margin-left: 0;
+    border-right: none;
+    border-bottom: .25rem solid black;
+    transform: translateY(-1px);
+  }
+}
+
+.year-marker {
+  position: absolute;
+
+  @media (min-width: var.$bp-desktop) {
+    top: 50%;
+  }
+}
+
+.timeline-card {
+  position: absolute;
+
+  @media (min-width: var.$bp-desktop) {
+    left: auto;
+    top: 50%;
+  }
+}
+
+.year-marker {
+  transform: translateY(50%);
+
+  @media (min-width: var.$bp-desktop) {
+    padding: 1rem;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline__highlight,
+.timeline__event {
+  position: absolute;
+  margin-left: 3rem;
+  height: 1rem;
+  width: 1rem;
+  transform: translateX(-50%);
+
+  @media (min-width: var.$bp-desktop) {
+    top: 50%;
+    margin-left: 0;
+    transform: translateY(-50%);
+  }
+
+  .timeline-card:hover + & {
+    opacity: 1
+  }
+}
+
+.timeline__event {
+  border-radius: 1rem;
+  transform: translate(-50%, 50%);
+
+  @media (min-width: var.$bp-desktop) {
+    transform: translate(-50%,-50%);
+  }
+
+  .timeline-card:hover + .timeline__highlight + & {
+    border-radius: 1rem;
+
+    @media (min-width: var.$bp-desktop) {
+      border-radius: 1rem 0 0 1rem;
+    }
+  }
+}
+
+.timeline__highlight {
+  opacity: 0;
+  transition: opacity .3s ease-out;
+
+  .timeline-card:hover + & {
+    opacity: 1
+  }
+}

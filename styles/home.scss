@@ -1,0 +1,19 @@
+@use './variables' as var;
+
+.home-content__pic {
+  object-fit: cover;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  z-index: -1;
+  height: calc(100vh - 4rem);
+}
+
+.home-content__name {
+  font-size: 4rem;
+
+  @media (min-width: var.$bp-tablet) {
+    font-size: 5rem;
+  }
+}
