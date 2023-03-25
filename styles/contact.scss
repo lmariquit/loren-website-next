@@ -1,0 +1,59 @@
+@use './variables' as var;
+
+#contact-container {
+  margin: 0.25% 0.25%;
+  background-image: linear-gradient(
+    to right,
+    rgb(230, 228, 207),
+    rgb(221, 216, 198)
+  );
+}
+
+.contact__intro {
+  padding-top: 50px;
+  margin-bottom: 1rem;
+  font-size: 30px;
+}
+
+.contact__form {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: .25rem;
+    font-size: 15px;
+  }
+
+  input[type='submit'] {
+    font-size: 16px;
+    height: 35px;
+    border-radius: 25px;
+  }
+
+  textarea {
+    min-width: 100%;
+
+    &[name='email'] {
+      font-size: 15px;
+      background-color: rgb(255, 255, 255);
+
+      @media (min-width: var.$bp-tablet) {
+        min-width: 15rem;
+      }
+    }
+
+    &[name='message'] {
+      height: 10rem;
+      font-size: 15px;
+      background-color: rgb(255, 255, 255);
+
+      @media (min-width: var.$bp-desktop) {
+        min-width: 40rem;
+      }
+    }
+  }
+}
+
+.contact__footer {
+  font-size: 15px;
+}

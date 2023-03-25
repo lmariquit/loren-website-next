@@ -1,0 +1,54 @@
+@use './variables' as var;
+
+.about-content__title {
+  margin-bottom: 2rem;
+}
+
+.about-content__intro {
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: var.$bp-tablet) {
+    flex-direction: row;
+  }
+}
+
+.about-left {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  @media (min-width: var.$bp-tablet) {
+    margin-right: 2rem;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+.about-content__pic {
+  border-radius: 5px;
+  box-shadow: 10px 3px 25px grey;
+  background-image: url('https://s3.amazonaws.com/lm-portfolio/lm_headshot.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about-content__intro {
+  text-align: center;
+
+  @media (min-width: var.$bp-tablet) {
+    text-align: left;
+  }
+}
+
+.about-content__bio {
+  font-size: 18px;
+}
+
+.bio:not(:last-of-type) {
+  margin-bottom: .75rem;
+}

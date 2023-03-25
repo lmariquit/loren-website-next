@@ -1,6 +1,8 @@
 import '@/styles/globals.scss'
 import '@/styles/home.scss'
+import '@/styles/about.scss'
 import '@/styles/timeline.scss'
+import '@/styles/contact.scss'
 
 import Image from 'next/image'
 import Link from 'next/link';
@@ -32,7 +34,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <div className={anekMalayalam.className}>
+    <div className={`app ${anekMalayalam.className}`}>
       <div className='nav__wrapper'>
         <Image src={navSvg} alt="menu svg" height={30} width={30} className='nav__open' onClick={handleOpenNavClick} />
         <nav className='nav'>

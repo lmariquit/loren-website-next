@@ -3,6 +3,12 @@ import Head from 'next/head'
 import TimelineCard from '../components/TimelineCard'
 import TimelineYearMark from '../components/TimelineYearMark'
 import timelineData from '../data/timeline-data.json'
+import { Andika } from '@next/font/google'
+
+const nameFont = Andika({
+  subsets: ['latin'],
+  weight: ['400']
+})
 
 export default function Timeline() {
   const matches = useMediaQuery('(min-width: 769px)')
@@ -23,9 +29,9 @@ export default function Timeline() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='timeline-content'>
+      <main className='timeline-content content'>
         <div className='content-well'>
-          <div className='content__title'>See My Journey</div>
+          <div className={`content__title ${nameFont.className}`}>See My Journey</div>
           <div className='timeline-wrapper'>
             <span className='timeline-left'></span>
             {createTimelineItems(timelineData, timelineStartYear, thisYear, matches)}
